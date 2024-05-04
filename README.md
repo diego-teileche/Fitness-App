@@ -6,6 +6,9 @@ This is a Fitness App built by `Diego Tech` by using:
 - Expo
 - TypeScript
 - Expo Navigation
+- React Native Reanimated
+- React Native Carousel
+- React Native Vector Icons
 
 ## One message for Everyone
 

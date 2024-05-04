@@ -1,3 +1,4 @@
+// #region IMPORTS
 import { View, Text, Image, TouchableOpacity } from "react-native"
 import React from "react"
 import {
@@ -7,8 +8,12 @@ import {
 import { StatusBar } from "expo-status-bar"
 import { LinearGradient } from "expo-linear-gradient"
 import Animated, { FadeInDown } from "react-native-reanimated"
+import { useRouter } from "expo-router"
 
+// #region FUNCTION
 export default function Index() {
+	const router = useRouter()
+
 	return (
 		<View className="flex-1 flex justify-end">
 			<StatusBar style="dark" />
@@ -41,11 +46,11 @@ export default function Index() {
 						For you
 					</Text>
 				</Animated.View>
-
 				<Animated.View entering={FadeInDown.delay(200).springify()}>
 					<TouchableOpacity
 						style={{ height: hp(7), width: wp(80) }}
 						className="bg-rose-500 flex items-center justify-center mx-auto rounded-full border-[1px] border-neutral-200"
+						onPress={() => router.push("/HomePage")}
 					>
 						<Text
 							style={{ fontSize: hp(3) }}
