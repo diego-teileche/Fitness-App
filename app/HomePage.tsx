@@ -8,6 +8,7 @@ import {
 } from "react-native-responsive-screen"
 import Ionicons from "react-native-vector-icons/Ionicons"
 import ImageSlider from "@/components/ImageSlider"
+import BodyParts from "@/components/BodyParts"
 
 export default function HomePage() {
 	return (
@@ -48,6 +49,10 @@ export default function HomePage() {
 
 			<View>
 				<ImageSlider />
+			</View>
+
+			<View className="flex-1">
+				<BodyParts />
 			</View>
 		</SafeAreaView>
 	)
