@@ -9,6 +9,13 @@ This is a Fitness App built by `Diego Tech` by using:
 - React Native Reanimated
 - React Native Carousel
 - React Native Vector Icons
+- RapidAPI
+
+### Libraries used
+
+- Axios
+- React Native DotEnv
+- React Native Carousel
 
 ## One message for Everyone
 

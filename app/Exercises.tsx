@@ -1,9 +1,19 @@
 import { View, Text, TouchableOpacity } from "react-native"
-import React from "react"
-import { useRouter } from "expo-router"
+import React, { useEffect, useState } from "react"
+import { useLocalSearchParams, useRouter } from "expo-router"
 
 export default function Exercises() {
 	const router = useRouter()
+	const item = useLocalSearchParams()
+	const [exercises, setExercises] = useState([])
+
+	/* useEffect(() => {
+		if (item) getExercises(item.name)
+	}, [item])
+	
+	const getExercises = async (bodyPart: any) => {
+		let data = await fetchExecisesByBodyPart()
+	} */
 
 	return (
 		<View className="mt-20">
