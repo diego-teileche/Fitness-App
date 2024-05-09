@@ -1,11 +1,4 @@
-import {
-	View,
-	Text,
-	TouchableOpacity,
-	ScrollView,
-	Image,
-	ImageSourcePropType,
-} from "react-native"
+import { View, Text, TouchableOpacity, Image } from "react-native"
 import React, { useEffect, useState } from "react"
 import { useLocalSearchParams, useRouter } from "expo-router"
 import { demoExercises } from "@/constants"
@@ -16,6 +9,7 @@ import {
 import { StatusBar } from "expo-status-bar"
 import Ionicons from "react-native-vector-icons/Ionicons"
 import ExercisesList from "@/components/ExercisesList"
+import { ScrollView } from "react-native-virtualized-view"
 
 const Exercises = () => {
 	const router = useRouter()
@@ -57,7 +51,7 @@ const Exercises = () => {
 					{item.name} exercises
 				</Text>
 				<View className="mb-10">
-					<ExercisesList />
+					<ExercisesList data={exercises} />
 				</View>
 			</View>
 		</ScrollView>

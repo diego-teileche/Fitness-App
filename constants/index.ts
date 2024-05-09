@@ -76,7 +76,7 @@ export const demoExercises = [
 			"asknlasnckasnlcknaslncaskncas",
 			"ampcnasncncnindwndnw",
 		],
-		name: "maria",
+		name: "mariaaaaaaaaaaaaaaaaaaaaa",
 		secondaryMuscles: ["kscnlasknckasn", "lasnlknfslcknsacn"],
 		target: "lkasnlcnalsnclaknclanc",
 	},
