@@ -1,11 +1,25 @@
-import { View, Text, TouchableOpacity } from "react-native"
+import {
+	View,
+	Text,
+	TouchableOpacity,
+	ScrollView,
+	Image,
+	ImageSourcePropType,
+} from "react-native"
 import React, { useEffect, useState } from "react"
 import { useLocalSearchParams, useRouter } from "expo-router"
+import { demoExercises } from "@/constants"
+import {
+	widthPercentageToDP as wp,
+	heightPercentageToDP as hp,
+} from "react-native-responsive-screen"
+import { StatusBar } from "expo-status-bar"
+import Ionicons from "react-native-vector-icons/Ionicons"
 
-export default function Exercises() {
+const Exercises = () => {
 	const router = useRouter()
 	const item = useLocalSearchParams()
-	const [exercises, setExercises] = useState([])
+	const [exercises, setExercises] = useState(demoExercises)
 
 	/* useEffect(() => {
 		if (item) getExercises(item.name)
@@ -16,12 +30,24 @@ export default function Exercises() {
 	} */
 
 	return (
-		<View className="mt-20">
-			<Text>Exercises</Text>
+		<ScrollView>
+			<StatusBar style="light" />
 
-			<TouchableOpacity onPress={() => router.back()}>
-				<Text>Go back</Text>
+			<Image
+				source={item.image}
+				style={{ width: wp(100), height: hp(45) }}
+				className="rounded-b-[40px]"
+			/>
+
+			<TouchableOpacity
+				className="bg-rose-500 flex justify-center items-center pr-1 mx-4 absolute rounded-full"
+				style={{ height: hp(5.5), width: hp(5.5), marginTop: hp(7) }}
+				onPress={() => router.back()}
+			>
+				<Ionicons name="caret-back-outline" size={hp(4)} color="white" />
 			</TouchableOpacity>
-		</View>
+		</ScrollView>
 	)
 }
+
+export default Exercises
