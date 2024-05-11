@@ -7,11 +7,12 @@ import {
 import { bodyParts } from "@/constants"
 import { LinearGradient } from "expo-linear-gradient"
 import { useRouter } from "expo-router"
+import Animated, { FadeInDown } from "react-native-reanimated"
 
 interface BodyPartsCardProps {
 	item: any
 	router: any
-	index: string | number
+	index: any
 }
 
 export default function BodyParts() {
@@ -47,7 +48,12 @@ const BodyPartsCard: React.FC<BodyPartsCardProps> = ({
 	index,
 }) => {
 	return (
-		<View>
+		<Animated.View
+			entering={FadeInDown.duration(400)
+				.delay(index * 200)
+				.springify()
+				.damping(4)}
+		>
 			<TouchableOpacity
 				onPress={() => router.push({ pathname: "/Exercises", params: item })}
 				style={{ width: wp(44), height: wp(52) }}
@@ -73,6 +79,6 @@ const BodyPartsCard: React.FC<BodyPartsCardProps> = ({
 					{item?.name}
 				</Text>
 			</TouchableOpacity>
-		</View>
+		</Animated.View>
 	)
 }

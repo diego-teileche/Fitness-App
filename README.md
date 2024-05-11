@@ -12,9 +12,9 @@ This is a Fitness App built by `Diego Tech` by using:
 - Expo Navigation
 - Tailwind / Nativewind
 - Axios
+- React Native Reanimated
 - React Native DotEnv
 - React Native Carousel
-- React Native Reanimated
 - React Native Carousel
 - React Native Vector Icons
 

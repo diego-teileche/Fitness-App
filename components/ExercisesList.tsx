@@ -6,6 +6,7 @@ import {
 	widthPercentageToDP as wp,
 	heightPercentageToDP as hp,
 } from "react-native-responsive-screen"
+import Animated, { FadeInDown } from "react-native-reanimated"
 
 interface ExercisesListProps {
 	data: any
@@ -14,7 +15,7 @@ interface ExercisesListProps {
 interface ExercisesCardProps {
 	item: any
 	router: any
-	index: string | number
+	index: any
 }
 
 const ExercisesList: React.FC<ExercisesListProps> = ({ data }) => {
@@ -43,7 +44,12 @@ const ExercisesCard: React.FC<ExercisesCardProps> = ({
 	index,
 }) => {
 	return (
-		<View>
+		<Animated.View
+			entering={FadeInDown.duration(400)
+				.delay(index * 200)
+				.springify()
+				.damping(4)}
+		>
 			<TouchableOpacity
 				className="flex py-3 space-y-2"
 				onPress={() =>
@@ -66,7 +72,7 @@ const ExercisesCard: React.FC<ExercisesCardProps> = ({
 					{item?.name?.length > 20 ? item.name.slice(0, 20) + "..." : item.name}
 				</Text>
 			</TouchableOpacity>
-		</View>
+		</Animated.View>
 	)
 }
 
