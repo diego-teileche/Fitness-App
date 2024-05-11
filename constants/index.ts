@@ -8,43 +8,43 @@ export const sliderImages = [
 
 export const bodyParts = [
 	{
-		name: "Back",
+		name: "back",
 		image: require("../assets/images/back.jpg"),
 	},
 	{
-		name: "Cardio",
+		name: "cardio",
 		image: require("../assets/images/cardio.webp"),
 	},
 	{
-		name: "Chest",
+		name: "chest",
 		image: require("../assets/images/chest.jpg"),
 	},
 	{
-		name: "Lower Arms",
+		name: "lower arms",
 		image: require("../assets/images/lower-arms.webp"),
 	},
 	{
-		name: "Lower Legs",
+		name: "lower legs",
 		image: require("../assets/images/lower-legs.jpg"),
 	},
 	{
-		name: "Neck",
+		name: "neck",
 		image: require("../assets/images/neck.webp"),
 	},
 	{
-		name: "Shoulders",
+		name: "shoulders",
 		image: require("../assets/images/shoulders.webp"),
 	},
 	{
-		name: "Upper Arms",
+		name: "upper arms",
 		image: require("../assets/images/upper-arms.jpg"),
 	},
 	{
-		name: "Upper Legs",
+		name: "upper legs",
 		image: require("../assets/images/upper-legs.webp"),
 	},
 	{
-		name: "Waist",
+		name: "waist",
 		image: require("../assets/images/waist.jpg"),
 	},
 ]

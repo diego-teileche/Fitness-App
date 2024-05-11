@@ -1,16 +1,16 @@
-/* import axios from "axios"
-import { RAPID_API_KEY } from "@env"
+import axios from "axios"
+import { EXPO_PUBLIC_RAPID_API_KEY } from "@env"
 
 const baseURL = "https://exercisedb.p.rapidapi.com"
 
-const apiCall = async (url: string, params?: any) => {
+const apiCall = async (url: any, params?: any) => {
 	try {
 		const options = {
 			method: "GET",
 			url,
 			params,
 			headers: {
-				"X-RapidAPI-Key": RAPID_API_KEY,
+				"X-RapidAPI-Key": EXPO_PUBLIC_RAPID_API_KEY,
 				"X-RapidAPI-Host": "exercisedb.p.rapidapi.com",
 			},
 		}
@@ -22,8 +22,8 @@ const apiCall = async (url: string, params?: any) => {
 	}
 }
 
-export const fetchExecisesByBodyPart = async (bodyPart: any) => {
+export const fetchExercisesByBodyPart = async (bodyPart: any) => {
 	let data = await apiCall(baseURL + `/exercises/bodyPart/${bodyPart}`)
 
 	return data
-} */
+}

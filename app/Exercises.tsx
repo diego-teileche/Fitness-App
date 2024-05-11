@@ -1,7 +1,6 @@
 import { View, Text, TouchableOpacity, Image } from "react-native"
-import React, { useEffect, useState } from "react"
+import React, { useCallback, useEffect, useState } from "react"
 import { useLocalSearchParams, useRouter } from "expo-router"
-import { demoExercises } from "@/constants"
 import {
 	widthPercentageToDP as wp,
 	heightPercentageToDP as hp,
@@ -10,19 +9,22 @@ import { StatusBar } from "expo-status-bar"
 import Ionicons from "react-native-vector-icons/Ionicons"
 import ExercisesList from "@/components/ExercisesList"
 import { ScrollView } from "react-native-virtualized-view"
+import { fetchExercisesByBodyPart } from "@/api/exerciseDB"
 
 const Exercises = () => {
 	const router = useRouter()
+	const [exercises, setExercises] = useState([])
 	const item = useLocalSearchParams()
-	const [exercises, setExercises] = useState(demoExercises)
 
-	/* useEffect(() => {
+	const getExercises = useCallback(async (bodypart: any) => {
+		let data = await fetchExercisesByBodyPart(bodypart)
+
+		setExercises(data)
+	}, [])
+
+	useEffect(() => {
 		if (item) getExercises(item.name)
 	}, [item])
-	
-	const getExercises = async (bodyPart: any) => {
-		let data = await fetchExecisesByBodyPart()
-	} */
 
 	return (
 		<ScrollView>
